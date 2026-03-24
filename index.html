@@ -912,9 +912,9 @@
                 </p>
 
                 <!-- NETLIFY FORM -->
-                <form class="email-form" name="waitlist" method="POST" action="/gracias.html" data-netlify="true">
+                <form class="email-form" name="waitlist" method="POST" action="/gracias.html" data-netlify="true" netlify-honeypot="bot-field">
                     <input type="hidden" name="form-name" value="waitlist">
-                    <p style="display:none;">
+                    <p class="hidden" style="display:none;">
                         <label>No llenes esto: <input name="bot-field"></label>
                     </p>
                     <input type="email" name="email" placeholder="Tu mejor email" required>
@@ -1168,9 +1168,9 @@
         <div class="container">
             <h2>Deja de postergar tu contenido</h2>
             <p>Únete a consultores que ya ahorran horas cada semana.</p>
-            <form class="email-form" name="waitlist-footer" method="POST" action="/gracias.html" data-netlify="true">
+            <form class="email-form" name="waitlist-footer" method="POST" action="/gracias.html" data-netlify="true" netlify-honeypot="bot-field-footer">
                 <input type="hidden" name="form-name" value="waitlist-footer">
-                <p style="display:none;">
+                <p class="hidden" style="display:none;">
                     <label>No llenes esto: <input name="bot-field-footer"></label>
                 </p>
                 <input type="email" name="email" placeholder="Tu mejor email" required>
@@ -1196,9 +1196,9 @@
             <button class="modal-close" onclick="closeModal()">×</button>
             <h3>Únete a la Lista</h3>
             <p>Sé de los primeros en acceder a PostStack con descuento early adopter.</p>
-            <form class="modal-form" name="waitlist-modal" method="POST" action="/gracias.html" data-netlify="true">
+            <form class="modal-form" name="waitlist-modal" method="POST" action="/gracias.html" data-netlify="true" netlify-honeypot="bot-field-modal">
                 <input type="hidden" name="form-name" value="waitlist-modal">
-                <p style="display:none;">
+                <p class="hidden" style="display:none;">
                     <label>No llenes esto: <input name="bot-field-modal"></label>
                 </p>
                 <input type="text" name="name" placeholder="Tu nombre" required>
@@ -1254,18 +1254,38 @@
             });
         });
 
-        // Handle form submissions - redirect to gracias.html
-        document.querySelectorAll('form').forEach(form => {
-            form.addEventListener('submit', function(e) {
-                // Store that form was submitted
-                localStorage.setItem('formSubmitted', 'true');
-            });
-        });
+        // Handle modal form submission with AJAX (because modal is hidden by default)
+        const modalForm = document.querySelector('.modal-form');
+        if (modalForm) {
+            modalForm.addEventListener('submit', function(e) {
+                e.preventDefault();
 
-        // Check if we need to redirect after form submission
-        if (localStorage.getItem('formSubmitted') === 'true' && window.location.pathname.includes('gracias') === false) {
-            // This shouldn't happen, but just in case
+                const formData = new FormData(this);
+
+                // Submit to Netlify
+                fetch('/', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: new URLSearchParams(formData).toString()
+                })
+                .then(() => {
+                    window.location.href = '/gracias.html';
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                    alert('Hubo un error. Por favor intenta de nuevo.');
+                });
+            });
         }
     </script>
+
+    <!-- Hidden form for Netlify to detect the modal form (Netlify can't detect forms in display:none elements) -->
+    <form name="waitlist-modal" method="POST" data-netlify="true" netlify-honeypot="bot-field-modal" style="display:none;">
+        <input type="hidden" name="form-name" value="waitlist-modal">
+        <p style="display:none;"><label>No llenes esto: <input name="bot-field-modal"></label></p>
+        <input type="text" name="name">
+        <input type="email" name="email">
+        <input type="text" name="niche">
+    </form>
 </body>
 </html>
