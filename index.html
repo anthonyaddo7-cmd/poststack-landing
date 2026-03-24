@@ -1,0 +1,1271 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PostStack - 30 Posts de LinkedIn en 5 Minutos para Consultores</title>
+    <meta name="description" content="Genera 30 posts de LinkedIn listos para publicar. Ahorra horas de bloqueo creativo. Diseñado para consultores y profesionales B2B.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0A66C2;
+            --primary-dark: #004182;
+            --secondary: #057642;
+            --dark: #1a1a1a;
+            --gray: #666;
+            --light-gray: #f5f5f5;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* NAVBAR */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            padding: 16px 0;
+            z-index: 1000;
+            border-bottom: 1px solid #eee;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .nav-cta {
+            background: var(--primary);
+            color: white;
+            padding: 10px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .nav-cta:hover {
+            background: var(--primary-dark);
+        }
+
+        /* HERO */
+        .hero {
+            padding: 160px 0 100px;
+            background: linear-gradient(180deg, #f8fbff 0%, #fff 100%);
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(10, 102, 194, 0.1);
+            color: var(--primary);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 24px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            color: var(--dark);
+        }
+
+        .hero h1 span {
+            color: var(--primary);
+        }
+
+        .hero-subtitle {
+            font-size: 20px;
+            color: var(--gray);
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* EMAIL FORM IN HERO */
+        .email-form {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+            max-width: 500px;
+            margin: 0 auto 24px;
+        }
+
+        .email-form input[type="email"] {
+            flex: 1;
+            min-width: 250px;
+            padding: 16px 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 16px;
+            font-family: inherit;
+            transition: border-color 0.3s;
+        }
+
+        .email-form input[type="email"]:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .email-form button {
+            background: var(--primary);
+            color: white;
+            padding: 16px 32px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .email-form button:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .hero-trust {
+            margin-top: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            color: var(--gray);
+            font-size: 14px;
+        }
+
+        .hero-trust span {
+            color: var(--secondary);
+            font-weight: 600;
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--dark);
+            padding: 16px 32px;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 600;
+            text-decoration: none;
+            border: 2px solid #e0e0e0;
+            transition: all 0.3s;
+            display: inline-block;
+            margin-top: 16px;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        /* PROBLEM */
+        .problem {
+            padding: 80px 0;
+            background: var(--light-gray);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--gray);
+            font-size: 18px;
+            max-width: 600px;
+            margin: 0 auto 48px;
+        }
+
+        .pain-points {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .pain-card {
+            background: white;
+            padding: 32px;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+
+        .pain-card .emoji {
+            font-size: 48px;
+            margin-bottom: 16px;
+        }
+
+        .pain-card h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+
+        .pain-card p {
+            color: var(--gray);
+            font-size: 15px;
+        }
+
+        /* SOLUTION */
+        .solution {
+            padding: 100px 0;
+        }
+
+        .solution-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .solution-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .solution-text h2 {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 24px;
+        }
+
+        .solution-text h2 span {
+            color: var(--primary);
+        }
+
+        .solution-text p {
+            color: var(--gray);
+            font-size: 18px;
+            margin-bottom: 32px;
+        }
+
+        .feature-list {
+            list-style: none;
+        }
+
+        .feature-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 16px;
+            font-size: 16px;
+        }
+
+        .feature-list .check {
+            background: rgba(5, 118, 66, 0.1);
+            color: var(--secondary);
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-weight: 700;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            padding: 16px 32px;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .solution-visual {
+            background: linear-gradient(135deg, #f0f7ff 0%, #e8f4ff 100%);
+            border-radius: 24px;
+            padding: 40px;
+            border: 1px solid #d0e3ff;
+        }
+
+        .post-preview {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+        }
+
+        .post-preview .post-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .post-preview .avatar {
+            width: 48px;
+            height: 48px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+        }
+
+        .post-preview .post-meta {
+            flex: 1;
+        }
+
+        .post-preview .post-meta strong {
+            display: block;
+            font-size: 15px;
+        }
+
+        .post-preview .post-meta span {
+            font-size: 13px;
+            color: var(--gray);
+        }
+
+        .post-preview .post-content {
+            font-size: 14px;
+            line-height: 1.7;
+            color: var(--dark);
+        }
+
+        .post-preview .post-content strong {
+            color: var(--dark);
+        }
+
+        .post-preview .post-tags {
+            margin-top: 16px;
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .post-preview .post-tags span {
+            background: var(--light-gray);
+            padding: 4px 12px;
+            border-radius: 50px;
+            font-size: 13px;
+            color: var(--primary);
+        }
+
+        /* HOW IT WORKS */
+        .how-it-works {
+            padding: 80px 0;
+            background: var(--light-gray);
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 32px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .step {
+            text-align: center;
+            padding: 24px;
+        }
+
+        .step-number {
+            width: 64px;
+            height: 64px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            font-weight: 800;
+            margin: 0 auto 24px;
+        }
+
+        .step h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+
+        .step p {
+            color: var(--gray);
+            font-size: 15px;
+        }
+
+        /* PRICING */
+        .pricing {
+            padding: 100px 0;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .price-card {
+            background: white;
+            border-radius: 24px;
+            padding: 40px;
+            border: 2px solid #e0e0e0;
+            text-align: center;
+            position: relative;
+        }
+
+        .price-card.featured {
+            border-color: var(--primary);
+            transform: scale(1.02);
+        }
+
+        .price-card.featured::before {
+            content: 'Más Popular';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .price-card h3 {
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+
+        .price-card .price {
+            font-size: 48px;
+            font-weight: 800;
+            color: var(--dark);
+            margin: 16px 0;
+        }
+
+        .price-card .price span {
+            font-size: 18px;
+            font-weight: 400;
+            color: var(--gray);
+        }
+
+        .price-card .price-desc {
+            color: var(--gray);
+            font-size: 14px;
+            margin-bottom: 24px;
+        }
+
+        .price-features {
+            list-style: none;
+            text-align: left;
+            margin-bottom: 32px;
+        }
+
+        .price-features li {
+            padding: 8px 0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 15px;
+        }
+
+        .price-features li::before {
+            content: '✓';
+            color: var(--secondary);
+            font-weight: 700;
+        }
+
+        .price-features li.disabled {
+            color: var(--gray);
+        }
+
+        .price-features li.disabled::before {
+            content: '✗';
+            color: #ccc;
+        }
+
+        .price-cta {
+            display: block;
+            background: var(--primary);
+            color: white;
+            padding: 16px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+
+        .price-cta:hover {
+            background: var(--primary-dark);
+        }
+
+        .price-card.featured .price-cta {
+            background: var(--secondary);
+        }
+
+        .price-card.featured .price-cta:hover {
+            background: #045a34;
+        }
+
+        /* TESTIMONIALS */
+        .testimonials {
+            padding: 80px 0;
+            background: var(--light-gray);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .testimonial {
+            background: white;
+            padding: 32px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+
+        .testimonial-text {
+            font-size: 16px;
+            line-height: 1.7;
+            margin-bottom: 24px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .testimonial-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+        }
+
+        .testimonial-author strong {
+            display: block;
+            font-size: 15px;
+        }
+
+        .testimonial-author span {
+            font-size: 13px;
+            color: var(--gray);
+        }
+
+        /* FAQ */
+        .faq {
+            padding: 80px 0;
+        }
+
+        .faq-list {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #e0e0e0;
+            padding: 24px 0;
+        }
+
+        .faq-item h4 {
+            font-size: 18px;
+            margin-bottom: 12px;
+            cursor: pointer;
+        }
+
+        .faq-item p {
+            color: var(--gray);
+            font-size: 16px;
+        }
+
+        /* CTA */
+        .cta-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 40px;
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+
+        .cta-section p {
+            font-size: 20px;
+            opacity: 0.9;
+            margin-bottom: 32px;
+        }
+
+        .cta-section .email-form {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .cta-section .email-form input[type="email"] {
+            background: white;
+            border: none;
+        }
+
+        .cta-section .email-form button {
+            background: white;
+            color: var(--primary);
+        }
+
+        .cta-section .email-form button:hover {
+            background: var(--light-gray);
+        }
+
+        /* FOOTER */
+        footer {
+            padding: 48px 0;
+            background: var(--dark);
+            color: white;
+        }
+
+        footer .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 24px;
+        }
+
+        footer .logo {
+            color: white;
+        }
+
+        footer p {
+            opacity: 0.7;
+            font-size: 14px;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.7;
+        }
+
+        footer a:hover {
+            opacity: 1;
+        }
+
+        /* MODAL */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.6);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal {
+            background: white;
+            border-radius: 24px;
+            padding: 48px;
+            max-width: 480px;
+            width: 100%;
+            text-align: center;
+            position: relative;
+            animation: modalSlide 0.3s ease-out;
+        }
+
+        @keyframes modalSlide {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--gray);
+        }
+
+        .modal h3 {
+            font-size: 28px;
+            margin-bottom: 16px;
+        }
+
+        .modal p {
+            color: var(--gray);
+            margin-bottom: 24px;
+        }
+
+        .modal .modal-form {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .modal .modal-form input {
+            padding: 16px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 16px;
+            font-family: inherit;
+        }
+
+        .modal .modal-form input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .modal .modal-form button {
+            background: var(--primary);
+            color: white;
+            padding: 16px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .modal .modal-form button:hover {
+            background: var(--primary-dark);
+        }
+
+        .modal .benefits {
+            margin-top: 24px;
+            text-align: left;
+        }
+
+        .modal .benefits li {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .modal .benefits li::before {
+            content: '✓';
+            color: var(--secondary);
+            font-weight: 700;
+        }
+
+        /* SUCCESS MESSAGE */
+        .success-message {
+            display: none;
+            text-align: center;
+            padding: 16px;
+        }
+
+        .success-message.show {
+            display: block;
+        }
+
+        .success-message .checkmark {
+            font-size: 48px;
+            margin-bottom: 16px;
+        }
+
+        .success-message h4 {
+            color: var(--secondary);
+            margin-bottom: 8px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero-subtitle {
+                font-size: 18px;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+
+            .solution-text h2 {
+                font-size: 28px;
+            }
+
+            .cta-section h2 {
+                font-size: 28px;
+            }
+
+            .nav-cta {
+                display: none;
+            }
+
+            .email-form {
+                flex-direction: column;
+            }
+
+            .email-form input[type="email"] {
+                min-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav>
+        <div class="container">
+            <div class="logo">PostStack</div>
+            <button class="nav-cta" onclick="openModal()">Empezar Gratis</button>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">🚀 Lanzamiento Early Access</div>
+                <h1>30 Posts de LinkedIn en <span>5 Minutos</span></h1>
+                <p class="hero-subtitle">
+                    Deja de perder horas con el bloqueo creativo. Genera un mes de contenido listo para publicar, optimizado para consultores y profesionales B2B.
+                </p>
+
+                <!-- NETLIFY FORM -->
+                <form class="email-form" name="waitlist" method="POST" action="/gracias.html" data-netlify="true">
+                    <input type="hidden" name="form-name" value="waitlist">
+                    <p style="display:none;">
+                        <label>No llenes esto: <input name="bot-field"></label>
+                    </p>
+                    <input type="email" name="email" placeholder="Tu mejor email" required>
+                    <button type="submit">Unirme a la Lista →</button>
+                </form>
+
+                <div class="hero-trust">
+                    <span>✓</span> Sin tarjeta de crédito
+                    <span>✓</span> 5 posts gratis
+                    <span>✓</span> Cancela cuando quieras
+                </div>
+
+                <a href="#how" class="btn-secondary">Ver Cómo Funciona</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROBLEM -->
+    <section class="problem">
+        <div class="container">
+            <h2 class="section-title">¿Te suena familiar?</h2>
+            <p class="section-subtitle">La creación de contenido constante es uno de los mayores dolores para profesionales que quieren visibilidad.</p>
+            <div class="pain-points">
+                <div class="pain-card">
+                    <div class="emoji">😩</div>
+                    <h3>Bloqueo creativo</h3>
+                    <p>Pasas horas frente a la pantalla sin saber qué escribir.</p>
+                </div>
+                <div class="pain-card">
+                    <div class="emoji">⏰</div>
+                    <h3>Sin tiempo</h3>
+                    <p>Entre clientes y proyectos, escribir contenido pasa a segundo plano.</p>
+                </div>
+                <div class="pain-card">
+                    <div class="emoji">📉</div>
+                    <h3>Inconsistencia</h3>
+                    <p>Publicas una semana sí y dos no. Tu audiencia se olvida de ti.</p>
+                </div>
+                <div class="pain-card">
+                    <div class="emoji">🤔</div>
+                    <h3>Sin resultados</h3>
+                    <p>Nadie te lee, nadie te contacta. Todo ese esfuerzo parece en vano.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOLUTION -->
+    <section class="solution">
+        <div class="container">
+            <div class="solution-grid">
+                <div class="solution-text">
+                    <h2>Contenido que <span>genera leads</span>, no solo likes</h2>
+                    <p>PostStack crea posts de LinkedIn diseñados específicamente para consultores, coaches y profesionales B2B. Cada post incluye hooks probados, estructura clara y CTA optimizado.</p>
+                    <ul class="feature-list">
+                        <li>
+                            <span class="check">✓</span>
+                            <strong>30 posts generados</strong> - Un mes completo de contenido
+                        </li>
+                        <li>
+                            <span class="check">✓</span>
+                            <strong>Hooks que capturan atención</strong> - Primera línea que para el scroll
+                        </li>
+                        <li>
+                            <span class="check">✓</span>
+                            <strong>Estructura optimizada</strong> - Formato que funciona en LinkedIn
+                        </li>
+                        <li>
+                            <span class="check">✓</span>
+                            <strong>CTA para generar leads</strong> - Cada post invita a la acción
+                        </li>
+                        <li>
+                            <span class="check">✓</span>
+                            <strong>Hashtags estratégicos</strong> - Máximo alcance orgánico
+                        </li>
+                    </ul>
+                    <button class="btn-primary" onclick="openModal()">Generar Mi Contenido →</button>
+                </div>
+                <div class="solution-visual">
+                    <div class="post-preview">
+                        <div class="post-header">
+                            <div class="avatar">JM</div>
+                            <div class="post-meta">
+                                <strong>Juan Martín</strong>
+                                <span>Consultor de Estrategia Digital</span>
+                            </div>
+                        </div>
+                        <div class="post-content">
+                            <strong>El error #1 que veo en consultores junior:</strong><br><br>
+                            Pierden horas creando contenido "perfecto" cuando lo que importa es la consistencia.<br><br>
+                            He visto consultores con contenido mediocre ganar 6 cifras porque publican TODOS los días.<br><br>
+                            Y consultores brillantes que nadie conoce porque publican una vez al mes.<br><br>
+                            <strong>La clave no es calidad, es visibilidad.</strong><br><br>
+                            → ¿Quieres mi framework de contenido para consultores? Comenta "FRAMEWORK" y te lo envío por DM.
+                        </div>
+                        <div class="post-tags">
+                            <span>#Consultoría</span>
+                            <span>#Estrategia</span>
+                            <span>#Negocios</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="how-it-works" id="how">
+        <div class="container">
+            <h2 class="section-title">Cómo Funciona</h2>
+            <p class="section-subtitle">En 3 pasos simples tienes contenido para todo el mes.</p>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Cuéntanos tu nicho</h3>
+                    <p>Selecciona tu área de expertise: consultoría, coaching, finanzas, marketing, legal, y más.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Genera tu contenido</h3>
+                    <p>Un click y obtienes 30 posts con hooks, cuerpo estructurado, CTA y hashtags optimizados.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Publica y consigue leads</h3>
+                    <p>Personaliza, programa y publica. Tu contenido trabaja mientras tú atiendes clientes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <h2 class="section-title">Planes Simples</h2>
+            <p class="section-subtitle">Sin letra pequeña. Sin compromisos. Cancela cuando quieras.</p>
+            <div class="pricing-grid">
+                <div class="price-card">
+                    <h3>Gratis</h3>
+                    <div class="price">$0<span>/mes</span></div>
+                    <p class="price-desc">Para probar antes de comprometerte</p>
+                    <ul class="price-features">
+                        <li>5 posts por mes</li>
+                        <li>3 nichos básicos</li>
+                        <li>Sin programación</li>
+                        <li class="disabled">Analytics</li>
+                    </ul>
+                    <button class="price-cta" onclick="openModal()">Empezar Gratis</button>
+                </div>
+                <div class="price-card featured">
+                    <h3>Starter</h3>
+                    <div class="price">$19<span>/mes</span></div>
+                    <p class="price-desc">Ideal para consultores individuales</p>
+                    <ul class="price-features">
+                        <li>30 posts por mes</li>
+                        <li>20+ nichos</li>
+                        <li>Calendario visual</li>
+                        <li>Exportar texto/imagen</li>
+                        <li>Soporte por email</li>
+                    </ul>
+                    <button class="price-cta" onclick="openModal()">Unirme Ahora</button>
+                </div>
+                <div class="price-card">
+                    <h3>Pro</h3>
+                    <div class="price">$49<span>/mes</span></div>
+                    <p class="price-desc">Para quienes quieren automatizar todo</p>
+                    <ul class="price-features">
+                        <li>Posts ilimitados</li>
+                        <li>Programación a LinkedIn</li>
+                        <li>Analytics de rendimiento</li>
+                        <li>Sugerencias personalizadas</li>
+                        <li>Soporte prioritario</li>
+                    </ul>
+                    <button class="price-cta" onclick="openModal()">Unirme Ahora</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">Lo que dicen los usuarios</h2>
+            <p class="section-subtitle">Consultores reales que ya usan PostStack.</p>
+            <div class="testimonials-grid">
+                <div class="testimonial">
+                    <p class="testimonial-text">"Antes pasaba 3 horas cada domingo escribiendo posts. Ahora genero el contenido del mes en 15 minutos y dedico ese tiempo a mi familia."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar" style="background: var(--primary);">MC</div>
+                        <div>
+                            <strong>María Castillo</strong>
+                            <span>Consultora de Marketing</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-text">"Los hooks son increíbles. Mis publicaciones antes tenían 50 likes promedio. Ahora consistentemente paso de 200. Me contactaron 3 clientes potenciales esta semana."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar" style="background: var(--secondary);">DR</div>
+                        <div>
+                            <strong>Daniel Ruiz</strong>
+                            <span>Coach de Carrera</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-text">"Probé Jasper, Copy.ai, ChatGPT... todos genéricos. PostStack entiende cómo funciona LinkedIn para consultores B2B. Eso marca la diferencia."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar" style="background: #6366f1;">LP</div>
+                        <div>
+                            <strong>Laura Pérez</strong>
+                            <span>Consultora Financiera</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq">
+        <div class="container">
+            <h2 class="section-title">Preguntas Frecuentes</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <h4>¿Los posts suenan robóticos o genéricos?</h4>
+                    <p>No. Cada post está diseñado con hooks probados en LinkedIn y estructuras que funcionan para consultores B2B. Además, puedes editar cada post antes de publicar.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>¿Puedo usar el contenido como si fuera mío?</h4>
+                    <p>Sí, 100%. El contenido generado es tuyo. Lo editas, personalizas y publicas con tu nombre. Nadie sabrá que usaste PostStack.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>¿Necesito saber de IA o tecnología?</h4>
+                    <p>No. PostStack es tan simple como seleccionar tu nicho y hacer click. En 2 minutos tienes tu contenido listo.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>¿Funciona para cualquier nicho?</h4>
+                    <p>PostStack está optimizado para profesionales de servicios B2B: consultores, coaches, abogados, contadores, agencias, freelancers, y similares.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>¿Puedo cancelar cuando quiera?</h4>
+                    <p>Sí. Sin contratos, sin compromisos. Cancelas desde tu cuenta y ya. No cobramos más allá del mes que pagaste.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Deja de postergar tu contenido</h2>
+            <p>Únete a consultores que ya ahorran horas cada semana.</p>
+            <form class="email-form" name="waitlist-footer" method="POST" action="/gracias.html" data-netlify="true">
+                <input type="hidden" name="form-name" value="waitlist-footer">
+                <p style="display:none;">
+                    <label>No llenes esto: <input name="bot-field-footer"></label>
+                </p>
+                <input type="email" name="email" placeholder="Tu mejor email" required>
+                <button type="submit">Unirme a la Lista →</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="logo">PostStack</div>
+            <p>© 2025 PostStack. Contenido para consultores, por consultores.</p>
+            <div>
+                <a href="#">Términos</a> · <a href="#">Privacidad</a> · <a href="#">Contacto</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAL -->
+    <div class="modal-overlay" id="modal">
+        <div class="modal">
+            <button class="modal-close" onclick="closeModal()">×</button>
+            <h3>Únete a la Lista</h3>
+            <p>Sé de los primeros en acceder a PostStack con descuento early adopter.</p>
+            <form class="modal-form" name="waitlist-modal" method="POST" action="/gracias.html" data-netlify="true">
+                <input type="hidden" name="form-name" value="waitlist-modal">
+                <p style="display:none;">
+                    <label>No llenes esto: <input name="bot-field-modal"></label>
+                </p>
+                <input type="text" name="name" placeholder="Tu nombre" required>
+                <input type="email" name="email" placeholder="Tu mejor email" required>
+                <input type="text" name="niche" placeholder="Tu nicho (ej: consultoría, coaching...)">
+                <button type="submit">Reservar Mi Lugar →</button>
+            </form>
+            <ul class="benefits">
+                <li>Acceso early adopter con 50% descuento</li>
+                <li>5 posts gratis para probar</li>
+                <li>Sin compromiso, cancela cuando quieras</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Modal functions
+        function openModal() {
+            document.getElementById('modal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('modal').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Close modal on outside click
+        document.getElementById('modal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href !== '#') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+
+        // Handle form submissions - redirect to gracias.html
+        document.querySelectorAll('form').forEach(form => {
+            form.addEventListener('submit', function(e) {
+                // Store that form was submitted
+                localStorage.setItem('formSubmitted', 'true');
+            });
+        });
+
+        // Check if we need to redirect after form submission
+        if (localStorage.getItem('formSubmitted') === 'true' && window.location.pathname.includes('gracias') === false) {
+            // This shouldn't happen, but just in case
+        }
+    </script>
+</body>
+</html>
